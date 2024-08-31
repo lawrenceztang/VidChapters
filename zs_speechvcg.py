@@ -101,6 +101,16 @@ def build_densevideocaptioning_dataset(dataset_name, split, args):
         else:
             raise NotImplementedError
         subtitles_path = args.chapters_subtitles_path
+    elif dataset_name == "rikrok":
+        if split == "train":
+            json_path = args.rikrok_train_json_path
+        elif split == "val":
+            json_path = args.rikrok_val_json_path
+        elif split == "test":
+            json_path = args.rikrok_test_json_path
+        else:
+            raise NotImplementedError
+        subtitles_path = args.rikrok_subtitles_path
     else:
         raise NotImplementedError
     return DenseVideoCaptioning_Dataset(json_path=json_path,
@@ -221,6 +231,8 @@ def evaluate(
             references = [args.vitt_val_json_path if split == "val" else args.vitt_test_json_path]
         elif dataset_name == "chapters":
             references = [args.chapters_val_json_path if split == "val" else args.chapters_test_json_path]
+        elif dataset_name == "rikrok":
+            references = [args.rikrok_val_json_path if split == "val" else args.rikrok_test_json_path]
         else:
             raise NotImplementedError
         metrics.update(eval_dvc(pred_path, references, tious=[0.3, 0.5, 0.7, 0.9], max_proposals_per_video=1000, verbose=False, no_lang_eval=False))

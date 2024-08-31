@@ -10,7 +10,8 @@ name2folder = {
     "youcook": "YouCook2",
     "htm": "howto100m",
     "chapters": "AllChapters",
-    "vitt": "ViTT"
+    "vitt": "ViTT",
+    "rikrok": "rikrok"
 }
 
 
@@ -101,6 +102,27 @@ def get_args_parser():
     parser.add_argument(
         "--chapters_subtitles_path",
         default=os.path.join(SSD_DIR, "allchapters_asr"),
+    )
+
+    parser.add_argument(
+        "--rikrok_features_path",
+        default=os.path.join(SSD_DIR, "rikrok_clipvitl14_features"),
+    )
+    parser.add_argument(
+        "--rikrok_train_json_path",
+        default=os.path.join(DATA_DIR, name2folder["rikrok"], "train.json"),
+    )
+    parser.add_argument(
+        "--rikrok_val_json_path",
+        default=os.path.join(DATA_DIR, name2folder["rikrok"], "val_1.json"),
+    )
+    parser.add_argument(
+        "--rikrok_test_json_path",
+        default=os.path.join(DATA_DIR, name2folder["rikrok"], "val_2.json"),
+    )
+    parser.add_argument(
+        "--rikrok_subtitles_path",
+        default=os.path.join(SSD_DIR, "rikrok_asr"),
     )
 
     # Training hyper-parameters

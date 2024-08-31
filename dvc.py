@@ -227,6 +227,8 @@ def evaluate(
             references = [args.vitt_val_json_path if split == "val" else args.vitt_test_json_path]
         elif dataset_name == "chapters":
             references = [args.chapters_val_json_path if split == "val" else args.chapters_test_json_path]
+        elif dataset_name == "rikrok":
+            references = [args.rikrok_val_json_path if split == "val" else args.rikrok_test_json_path]
         else:
             raise NotImplementedError
         metrics.update(eval_dvc(pred_path, references, tious=[0.3, 0.5, 0.7, 0.9], max_proposals_per_video=1000, verbose=False, no_lang_eval=False))
