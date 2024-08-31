@@ -24,3 +24,12 @@ scikit_learn==0.23.2
 tensorboardX==2.1
 langdetect==1.0.9
 genbit==2.2.0.0
+ftfy
+regex
+tqdm
+yt-dlp
+sentencepiece
+gdown
+git+https://github.com/openai/CLIP.git
+yt-dlp
+transformers

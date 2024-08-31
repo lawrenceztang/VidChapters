@@ -1,5 +1,3 @@
-export TRANSFORMERS_CACHE=/scratch/lawrencetang/cache
-
 dset_name=chapters
 ctx_mode=video_tef
 v_feat_types=clip
@@ -8,14 +6,14 @@ results_root=TOFILL
 exp_id=chapters
 
 ######## data paths
-train_path=$TRANSFORMERS_CACHE/youcookii_annotations_trainval.json
-eval_path=$TRANSFORMERS_CACHE/youcookii_annotations_trainval.json
+train_path=TOFILL/chapters_vmr_train.jsonl
+eval_path=TOFILL/chapters_vmr_val1000.jsonl
 eval_split_name=val
 
 ######## setup video+text features
-feat_root=$TRANSFORMERS_CACHE/YouCook2
-feat_root_eval=$TRANSFORMERS_CACHE/YouCook2
-subtitles_path=$TRANSFORMERS_CACHE/YouCook2/train.json
+feat_root=TOFILL
+feat_root_eval=TOFILL
+subtitles_path=TOFILL
 
 # video features
 v_feat_dim=0
